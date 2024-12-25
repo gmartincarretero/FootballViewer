@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="content" data-offset-top="200">
+            <% for (let i=0; i < result.data.response.length; i++) { %>
+             <% title = result.data.response[i].title; %>
+             <% competition = result.data.response[i].competition; %> 
+             <% date = result.data.response[i].date; %>
+            <% video = result.data.response[i].videos[0].embed; %>
+            <% if (competition === comp) { %>
+                <h2><%= title %></h2>
+                <h3><%= competition %></h3>
+                <p><%= date %></p>
+            <div class="video"><%- video%></div>
+            <% }}; %>
+    </div>
+
+<%- include("partials/footer.ejs") %>
+
+</body>
+</html>

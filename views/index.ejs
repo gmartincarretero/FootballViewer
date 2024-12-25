@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<div class="content" data-offset-top="200">
+<h3>Main Competitions</h3>
+<br>
+<br>
+<form action="/submit" method="post">
+<label for="comps">Choose a competition:</label>
+<br>
+<br>
+<select name="comps" id="comps">
+  <option value="ENGLAND: Premier League">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</option>
+  <option value="ITALY: Serie A">🇮🇹 Serie A</option>
+  <option value="SPAIN: La Liga">🇪🇸 La Liga</option>
+  <option value="GERMANY: Bundesliga">🇩🇪 Bundesliga</option>
+  <option value="FRANCE: Ligue 1">🇫🇷 Ligue 1</option>
+</select>
+<br>
+<br>
+<input type="submit" value="Submit" />
+</form>
+
+<h3><a href="all" style="color: white;">Or watch all the matches</a></h3>
+</div>
+
+<%- include("partials/footer.ejs") %>
+
+</body>
+</html>
