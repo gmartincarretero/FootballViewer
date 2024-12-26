@@ -1,32 +1,29 @@
 <%- include("partials/header.ejs") %>
 
-<div class="content" data-offset-top="200">
-<h2>Main Competitions</h2>
-<br>
-<br>
-<form action="/submit" method="post">
-<label for="comps">Choose a competition:</label>
-<br>
-<br>
-<select name="comps" id="comps" style="padding: 5px;">
-  <option value="ENGLAND: Premier League">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</option>
-  <option value="ITALY: Serie A">🇮🇹 Serie A</option>
-  <option value="SPAIN: La Liga">🇪🇸 La Liga</option>
-  <option value="GERMANY: Bundesliga">🇩🇪 Bundesliga</option>
-  <option value="FRANCE: Ligue 1">🇫🇷 Ligue 1</option>
-</select>
-<input type="submit" style="padding: 5px;" value="Submit" />
-</form>
-
-<h3><a href="all" style="color: white;">Or watch all the matches</a></h3>
+<div class="px-4 pt-5 my-5 text-center content">
+        <div class="col-lg-6 mx-auto">        
+            <form action="/submit" method="post">
+                <div class="selector">
+                    <select name="comps" id="comps" class="form-select" aria-label="Default select example">
+                    <option value="all">🌍 All competitions</option>
+                    <option value="ENGLAND: Premier League">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</option>
+                    <option value="ITALY: Serie A">🇮🇹 Serie A</option>
+                    <option value="SPAIN: La Liga">🇪🇸 La Liga</option>
+                    <option value="GERMANY: Bundesliga">🇩🇪 Bundesliga</option>
+                    <option value="FRANCE: Ligue 1">🇫🇷 Ligue 1</option>
+                    </select>
+                    <input class="btn btn-warning" style="margin-top: 10px; margin-bottom: 10px;" type="submit" value="Submit"> 
+                </div>
+            </form>      
+        </div>   
+        <div class="col-lg-6 mx-auto" style="padding-top: 20px;">  
+         <h3>Latest match: <%= title = result.data.response[0].title; %></h3>
+         <h4><%= competition = result.data.response[0].competition; %> </h4>
+         <p><%= date = result.data.response[0].date; %></p>
+         <div class="video"><%- video = result.data.response[0].videos[0].embed; %></div>
+        </div>
 </div>
-<br>
-<div class="latest container">
-     <h2>Latest match: <%= title = result.data.response[0].title; %></h2>
-     <h3><%= competition = result.data.response[0].competition; %> </h3>
-     <p><%= date = result.data.response[0].date; %></p>
-     <div class="video"><%- video = result.data.response[0].videos[0].embed; %></div>
-    </div>
+
 
 <%- include("partials/footer.ejs") %>
 

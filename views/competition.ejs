@@ -1,18 +1,33 @@
 <%- include("partials/header.ejs") %>
 
-    <div class="content container" data-offset-top="200">
+<div class="px-4 pt-5 my-5 text-center content">
+    <div class="col-lg-6 mx-auto">   
+        <div class="content" data-offset-top="200">
             <% for (let i=0; i < result.data.response.length; i++) { %>
              <% title = result.data.response[i].title; %>
              <% competition = result.data.response[i].competition; %> 
              <% date = result.data.response[i].date; %>
             <% video = result.data.response[i].videos[0].embed; %>
             <% if (competition === comp) { %>
-                <h2><%= title %></h2>
-                <h3><%= competition %></h3>
+                <h3><%= title %></h3>
+                <h4><%= competition %></h4>
                 <p><%= date %></p>
-            <div class="video"><%- video%></div>
+                <div class="video"><%- video%></div>
+                <br>
+                <hr>
+                <br>
+            <% } else if (comp === "all") { %>
+                <h3><%= title %></h3>
+                <h4><%= competition %></h4>
+                <p><%= date %></p>
+                <div class="video"><%- video%></div>
+                <br>
+                <hr>
+                <br>
             <% }}; %>
+        </div>
     </div>
+</div>
 
 <%- include("partials/footer.ejs") %>
 

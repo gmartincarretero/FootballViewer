@@ -1,14 +1,20 @@
 <%- include("partials/header.ejs") %>
 
-    <div class="content container" data-offset-top="200">
-        <% for (let i=0; i < result.data.response.length; i++) { %>
-        <h2><%= result.data.response[i].title %></h2>
-        <h3><%= result.data.response[i].competition %></h3>
-        <p><%= result.data.response[i].date %></p>
-       <div class="video"><%- result.data.response[i].videos[0].embed%></div>
-    </div>
+<div class="px-4 pt-5 my-5 text-center content style="padding-top: 20px;">
+    <div class="col-lg-6 mx-auto">        
+        <div class="content container" data-offset-top="200">
+           <% for (let i=0; i < result.data.response.length; i++) { %>
+            <h3><%= result.data.response[i].title %></h3>
+            <h4><%= result.data.response[i].competition %></h4>
+            <p><%= result.data.response[i].date %></p>
+            <div class="video"><%- result.data.response[i].videos[0].embed%></div>
+            <br>
+            <hr>
+            <br>
+        </div>
     <% } %>
-
+    </div>
+</div>    
 <%- include("partials/footer.ejs") %>
 
 </body>
