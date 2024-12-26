@@ -8,20 +8,20 @@
 <label for="comps">Choose a competition:</label>
 <br>
 <br>
-<select name="comps" id="comps">
+<select name="comps" id="comps" style="padding: 5px;">
   <option value="ENGLAND: Premier League">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</option>
   <option value="ITALY: Serie A">🇮🇹 Serie A</option>
   <option value="SPAIN: La Liga">🇪🇸 La Liga</option>
   <option value="GERMANY: Bundesliga">🇩🇪 Bundesliga</option>
   <option value="FRANCE: Ligue 1">🇫🇷 Ligue 1</option>
 </select>
-<input type="submit" value="Submit" />
+<input type="submit" style="padding: 5px;" value="Submit" />
 </form>
 
 <h3><a href="all" style="color: white;">Or watch all the matches</a></h3>
 </div>
 <br>
-<div class="latest">
+<div class="latest container">
      <h2>Latest match: <%= title = result.data.response[0].title; %></h2>
      <h3><%= competition = result.data.response[0].competition; %> </h3>
      <p><%= date = result.data.response[0].date; %></p>
