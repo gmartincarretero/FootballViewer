@@ -60,3 +60,9 @@ span.name{
     max-width: fit-content;
     max-height: 50px;
 }
+
+@media (max-width: 800px){
+    #subtitle{
+        display: none;
+    }
+}
